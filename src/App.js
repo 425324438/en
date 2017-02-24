@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import './style/App.scss';
+import './style/App.scss'
 
 class App extends Component {
   constructor(props) {
@@ -13,7 +13,7 @@ class App extends Component {
     console.info('背景')
     e.preventDefault()
     e.stopPropagation()
-    return false;
+    return false
   }
   btnClick(e) {
     console.info('按钮')
@@ -28,13 +28,10 @@ class App extends Component {
     return false
   }
   render() {
-    const { value, onIncreaseClick } = this.props
     return (
       <div className="App">
         <div className="App-header">
           <h2>test to React</h2>
-          <span>{value}</span>
-          <button onClick={onIncreaseClick}>Increase</button>
         </div>
         <div className="test"
           onClick={(e) => this.bakClick(e)}
@@ -46,7 +43,7 @@ class App extends Component {
           <button >c</button>
         </div>
       </div>
-    );
+    )
   }
 }
 export default App
