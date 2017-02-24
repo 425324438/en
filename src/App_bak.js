@@ -2,6 +2,21 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import './style/App.scss';
 
+// Action Creator
+const increaseAction = { type: 'increase' }
+
+const mapStateToProps = (state) => {
+  return {
+    value: state.count
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onIncreaseClick: () => dispatch(increaseAction)
+  }
+}
+
 class App extends Component {
   constructor(props) {
     super(props)
@@ -49,4 +64,7 @@ class App extends Component {
     );
   }
 }
-export default App
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App)
