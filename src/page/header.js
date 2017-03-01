@@ -1,16 +1,9 @@
-import React, { Component, PropTypes } from 'react'
+import React from 'react'
 
-class Header extends Component {
-  constructor(props) {
-    super(props)
-  }
-  render() {
-    return (
-      <nav>
-        header
-      </nav>
-    )
-  }
-}
+const Header = () => (
+  <nav>
+    header
+  </nav>
+)
 
 export default Header

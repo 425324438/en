@@ -1,5 +1,5 @@
-import React, { Component, PropTypes } from 'react'
-import { Link, browserHistory } from 'react-router'
+import React, { Component } from 'react'
+import { browserHistory } from 'react-router'
 
 class disk extends Component {
   constructor(props) {
