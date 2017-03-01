@@ -14,7 +14,7 @@ class disk extends Component {
       <div>
         disk
         <br />
-        <button onTouchEnd={(e) => this.click(e)} type="button">
+        <button onTouchTap={(e) => this.click(e)} type="button">
           根目录
         </button>
       </div>

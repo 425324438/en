@@ -19,7 +19,7 @@ class welCome extends Component {
         welCome
         <input type="text" defaultValue={val} />
         <br />
-        <button onTouchEnd={(e) => this.click(e)} type="button">
+        <button onTouchTap={(e) => this.click(e)} type="button">
           disk
         </button>
       </div>
