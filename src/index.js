@@ -5,7 +5,7 @@ import configureStore from './store/configureStore'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 import RouterDemo from './router/routerDemo'
 import Header from './page/header'
-import App from './App'
+import './style/App.scss'
 
 injectTapEventPlugin({
   shouldRejectClick: () => {
