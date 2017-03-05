@@ -2,8 +2,14 @@ import * as ActionTypes from '../actionTypes/diskTypes'
 
 const initialState = {
   entities: {
-    di_0: 0,
-    di_1: 1
+    di_0: {
+      'first_Name': '11',
+      'last_Name': '22'
+    },
+    di_1: {
+      'first_Name': '33',
+      'last_Name': '44'
+    }
   },
   ids: [
     'di_0',

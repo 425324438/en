@@ -17,9 +17,10 @@ class welCome extends Component {
     return (
       <div>
         welCome
+        <br />
         <input type="text" defaultValue={val} />
         <br />
-        <button onTouchTap={(e) => this.click(e)} type="button">
+        <button onClick={(e) => this.click(e)} type="button">
           disk
         </button>
       </div>

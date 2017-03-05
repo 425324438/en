@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from './header'
+import Header from '../components/Header'
 /*
-  所有的页面都要走这个页面过啊一遍
+  所有的页面都要走这个页面过一遍
 */
 const Home = (props) => {
   const { children, location } = props

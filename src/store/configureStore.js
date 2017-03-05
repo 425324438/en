@@ -1,4 +1,5 @@
-import { createStore } from 'redux'
+import { createStore, compose, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
 import rootReducer from '../reducers/index'
 
 export default () => {
@@ -11,7 +12,10 @@ export default () => {
   // 创建 store
   const store = createStore(
     rootReducer,
-    ...enhancers
+    compose(
+      applyMiddleware(thunk),
+      ...enhancers
+    )
   )
   return store
 }
