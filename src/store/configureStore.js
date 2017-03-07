@@ -1,6 +1,10 @@
 import { createStore, compose, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
+import createSagaMiddleware from 'redux-saga'
 import rootReducer from '../reducers/index'
+import diskSagas from '../sagas/diskSagas'
+
+const sagaMiddleware = createSagaMiddleware()
 
 export default () => {
   // 启用调试工具
@@ -14,8 +18,10 @@ export default () => {
     rootReducer,
     compose(
       applyMiddleware(thunk),
+      applyMiddleware(sagaMiddleware),
       ...enhancers
     )
   )
+  sagaMiddleware.run(diskSagas)
   return store
 }

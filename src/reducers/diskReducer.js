@@ -22,7 +22,12 @@ const initialState = {
 const diskReduer = (state = initialState, action) => {
   switch (action.type) {
     case ActionTypes.disk.DISK_GET_REQUESTED:
-      console.info('reducer')
+      console.info('开始请求')
+      console.info(action)
+      return {...state}
+    case ActionTypes.disk.DISK_GET_SUCCEEDED:
+      console.info('查询结果')
+      console.info(action.mess)
       return {...state}
     default:
       return state

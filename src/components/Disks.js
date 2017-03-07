@@ -5,12 +5,19 @@ import { Table } from 'react-bootstrap'
 class Disks extends Component {
   constructor(props) {
     super(props)
+    this.getDisk = this.getDisk.bind(this)
   }
+
+  getDisk() {
+    const { getDisks } = this.props
+    getDisks()
+  }
+
   render() {
     const { disks } = this.props
-    console.info(disks)
     return (
       <div>
+
         <Table striped bordered condensed hover  >
           <thead>
             <tr>
@@ -25,7 +32,10 @@ class Disks extends Component {
               <td></td>
               <td><input type="text" placeholder="输入..." /></td>
               <td><input type="text" placeholder="输入..." /></td>
-              <td><button type="button" >添加</button></td>
+              <td>
+                <button type="button" >添加</button>
+                <button type="button" onClick={() => this.getDisk()} >查询</button>
+              </td>
             </tr>
             {
               disks.ids.map((item, i) => {

@@ -1,8 +1,15 @@
 import { connect } from 'react-redux'
 import Disks from '../components/Disks'
+import * as Actions from '../actions/diskAction'
 
 const mapStateToProps = state => ({
   disks: state.server.disk
 })
 
-export default connect(mapStateToProps, null)(Disks)
+const mapDispatchProps = dispatch => ({
+  getDisks: () => {
+    return dispatch(Actions.getDisks())
+  }
+})
+
+export default connect(mapStateToProps, mapDispatchProps)(Disks)
