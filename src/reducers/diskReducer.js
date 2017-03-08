@@ -24,6 +24,9 @@ const diskReduer = (state = initialState, action) => {
     case ActionTypes.disk.DISK_GET_REQUESTED:
       console.info('reducer')
       return {...state}
+    case ActionTypes.disk.DISK_GET_SUCCEEDED:
+      alert(3)
+      return {...state}
     default:
       return state
   }

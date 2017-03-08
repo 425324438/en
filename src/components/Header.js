@@ -8,7 +8,8 @@ const Header = () => (
       测试增删改查
       <small>
         <Link to="/">首页</Link> ，
-        <Link to="disk">测试页</Link>
+        <Link to="disk">测试页</Link> ，
+        <Link to="test">testPage</Link> 
       </small>
     </PageHeader>
   </nav>
