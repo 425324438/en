@@ -27,14 +27,15 @@ const diskReduer = (state = initialState, action) => {
       return {...state}
     case ActionTypes.disk.DISK_GET_SUCCEEDED:
       console.info('查询结果')
-      let ids = action.result.result
-      let entities = action.result.entities.disk
-      console.info(action.result)
-      ids.map(item => {
-        const id = `id_${item}`
-        state.ids.push(id)
-        state.entities[id] = entities[item]
-      })
+      console.info(action.mess)
+      // let ids = action.result.result
+      // let entities = action.result.entities.disk
+      // console.info(action.result)
+      // ids.map(item => {
+      //   const id = `id_${item}`
+      //   state.ids.push(id)
+      //   state.entities[id] = entities[item]
+      // })
       return {...state}
     default:
       return state

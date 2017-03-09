@@ -8,10 +8,11 @@ function* fetchDisks() {
   yield put({ type: ActionTypes.disk.DISK_GET_REQUEST })
   try {
     console.info('开始请求')
-    const json = yield call(callApi, 'getFixedData', 'GET')
+    // const json = yield call(callApi, 'getFixedData', 'GET')
+    const json = yield call(callApi, 'signup', 'GET')
     const result = normalize(json, schema.arrayOfDisks)
-    yield put({ type: ActionTypes.disk.DISK_GET_SUCCEEDED, ...{ result } })
-    // yield put({ type: ActionTypes.disk.DISK_GET_SUCCEEDED, ...{ mess:'aaa' } })
+    // yield put({ type: ActionTypes.disk.DISK_GET_SUCCEEDED, ...{ result } })
+    yield put({ type: ActionTypes.disk.DISK_GET_SUCCEEDED, ...{ mess: result } })
   } catch (e) {
     yield put({ type: ActionTypes.disk.DISK_GET_FAILED, message: e.message })
   }
