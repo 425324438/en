@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchProps = dispatch => ({
   getDisks: () => {
-    return dispatch(Actions.getDisks())
+    dispatch(Actions.getDisks())
   }
 })
 

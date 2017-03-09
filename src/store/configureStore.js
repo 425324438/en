@@ -1,6 +1,6 @@
 import { createStore, compose, applyMiddleware } from 'redux'
-import thunk from 'redux-thunk'
 import createSagaMiddleware from 'redux-saga'
+import thunk from 'redux-thunk'
 import rootReducer from '../reducers/index'
 import diskSagas from '../sagas/diskSagas'
 

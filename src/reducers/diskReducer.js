@@ -29,6 +29,9 @@ const diskReduer = (state = initialState, action) => {
       console.info('查询结果')
       console.info(action.mess)
       return {...state}
+    case ActionTypes.disk.DISK_GET_SUCCEEDED:
+      alert(3)
+      return {...state}
     default:
       return state
   }
