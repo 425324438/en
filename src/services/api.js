@@ -11,7 +11,6 @@ function callApi(endpoint, method, body = '', isformData = false) {
   // const fullUrl = API_ROOT + endpoint
   const params = []
   params.mode = 'cors'
-  params.credentials = 'include'
   params.method = method
   if (method === 'POST' || method === 'PUT') {
     if (isformData === false) {
