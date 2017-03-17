@@ -17,9 +17,26 @@ function* fetchDisks() {
     yield put({ type: ActionTypes.disk.DISK_GET_FAILED, message: e.message })
   }
 }
+//根据ID 删除
+function* deltClick(data) {
+      console.info('开始请求---删除方法')
+  yield put({ type: ActionTypes.disk.DISK_DELETE_DELETE })
+  try {
+
+    // const json = yield call(callApi, 'getFixedData', 'GET')
+    const json = yield call(callApi, 'deleteById', 'POST'.data.data)
+      console.info('开始请求---删除方法--回调'+json)
+    const result = normalize(json, schema.arrayOfDisks)
+    // yield put({ type: ActionTypes.disk.DISK_GET_SUCCEEDED, ...{ result } })
+    yield put({ type: ActionTypes.disk.DISK_DELETE_SUCCEEDED, ...{ mess: result } })
+  } catch (e) {
+    yield put({ type: ActionTypes.disk.DISK_DELETE_FAILED, message: e.message })
+  }
+}
 
 function* fetchWatcher() {
   yield takeLatest(ActionTypes.disk.DISK_GET_REQUESTED, fetchDisks)
+  yield takeLatest(ActionTypes.disk.DISK_DELETE_DELETE, deltClick)
 }
 
 function* diskSaga() {

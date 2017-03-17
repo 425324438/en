@@ -1,14 +1,16 @@
 const types = [
   'GET',
   'PULL',
-  'PUSH'
+  'PUSH',
+  'DELETE'
 ]
 
 const requestType = [
   'REQUESTED',
   'REQUEST',
   'SUCCEEDED',
-  'FAILED'
+  'FAILED',
+  'DELETE'
 ]
 
 export const disk = {}

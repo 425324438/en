@@ -9,7 +9,12 @@ const mapStateToProps = state => ({
 const mapDispatchProps = dispatch => ({
   getDisks: () => {
     dispatch(Actions.getDisks())
+  },
+  deltClick: () => {
+    dispatch(Actions.deltClick())
   }
 })
+
+
 
 export default connect(mapStateToProps, mapDispatchProps)(Disks)

@@ -11,7 +11,10 @@ class Disks extends Component {
     const { getDisks } = this.props
     getDisks()
   }
-
+  deltClick(data){
+    const { deltClick } = this.props
+    deltClick(data)
+  }
   render() {
     const { disks } = this.props
     return (
@@ -44,7 +47,7 @@ class Disks extends Component {
                     <td>{disks.entities[item].first_Name}</td>
                     <td>{disks.entities[item].last_Name}</td>
                     <td>
-                      <button type="button" >删除</button>&emsp;
+                      <button type="button" onClick={() => this.deltClick()} >删除</button>&emsp;
                       <button type="button" >修改</button>
                     </td>
                   </tr>
