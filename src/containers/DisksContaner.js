@@ -10,8 +10,15 @@ const mapDispatchProps = dispatch => ({
   getDisks: () => {
     dispatch(Actions.getDisks())
   },
-  deltClick: () => {
-    dispatch(Actions.deltClick())
+  deltClick: (data) => {
+    return new Promise((resolve, reject)=>{
+      dispatch(Actions.deltClick(data,resolve,reject))
+    })
+  },
+  saveClick: (data) => {
+    return new Promise((resolve, reject)=>{
+      dispatch(Actions.saveClick(data,resolve,reject))
+    })
   }
 })
 

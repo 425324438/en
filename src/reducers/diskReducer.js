@@ -1,20 +1,8 @@
 import * as ActionTypes from '../actionTypes/diskTypes'
 
 const initialState = {
-  entities: {
-    di_0: {
-      'first_Name': '11',
-      'last_Name': '22'
-    },
-    di_1: {
-      'first_Name': '33',
-      'last_Name': '44'
-    }
-  },
-  ids: [
-    'di_0',
-    'di_1',
-  ],
+  entities: {},
+  ids: [],
   startRequest: 'end',
   errorMessage: ''
 }
@@ -27,15 +15,16 @@ const diskReduer = (state = initialState, action) => {
       return {...state}
     case ActionTypes.disk.DISK_GET_SUCCEEDED:
       console.info('查询结果')
-      console.info(action.mess)
-      // let ids = action.result.result
-      // let entities = action.result.entities.disk
-      // console.info(action.result)
-      // ids.map(item => {
-      //   const id = `id_${item}`
-      //   state.ids.push(id)
-      //   state.entities[id] = entities[item]
-      // })
+      const {result,entities} = action.mess
+      state.ids = result
+      state.entities = entities.disk
+      return {...state}
+    case ActionTypes.disk.DISK_PUSH_SUCCEEDED:
+        console.info('查询结果')
+        return {...state}
+    case ActionTypes.disk.DISK_DELETE_SUCCEEDED:
+      console.info('开始请求')
+      console.info(action)
       return {...state}
     default:
       return state

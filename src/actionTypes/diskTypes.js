@@ -9,8 +9,7 @@ const requestType = [
   'REQUESTED',
   'REQUEST',
   'SUCCEEDED',
-  'FAILED',
-  'DELETE'
+  'FAILED'
 ]
 
 export const disk = {}
