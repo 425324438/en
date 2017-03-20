@@ -4,12 +4,12 @@ import { callApi } from '../services/api'
 import * as ActionTypes from '../actionTypes/diskTypes'
 import * as schema from '../actions/schema'
 
-function* fetchDisks() {
+function* fetchDisks(data) {
   yield put({ type: ActionTypes.disk.DISK_GET_REQUEST })
   try {
     console.info('开始请求')
     // const json = yield call(callApi, 'getFixedData', 'GET')
-    const json = yield call(callApi, 'signup', 'GET')
+    const json = yield call(callApi, 'signup', 'GET',{id:data.id})
     const result = normalize(json, schema.arrayOfDisks)
     // yield put({ type: ActionTypes.disk.DISK_GET_SUCCEEDED, ...{ result } })
     yield put({ type: ActionTypes.disk.DISK_GET_SUCCEEDED, ...{ mess: result } })

@@ -7,8 +7,10 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchProps = dispatch => ({
-  getDisks: () => {
-    dispatch(Actions.getDisks())
+  getDisks: (data) => {
+    return new Promise((data,resolve,reject)=>{
+      dispatch(Actions.getDisks(data,resolve,reject))
+    })
   },
   deltClick: (data) => {
     return new Promise((resolve, reject)=>{
